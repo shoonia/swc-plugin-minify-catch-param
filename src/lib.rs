@@ -7,8 +7,8 @@ use swc_core::{
 };
 
 struct CatchParamUsageVisitor {
-    pub target_id: Id,
-    pub found: bool,
+    target_id: Id,
+    found: bool,
 }
 
 impl Visit for CatchParamUsageVisitor {
@@ -36,7 +36,7 @@ impl VisitMut for CatchParamMinifier {
             found: false,
         };
 
-        catch_clause.body.visit_with(&mut usage_visitor);
+        catch_clause.body.visit_children_with(&mut usage_visitor);
 
         if !usage_visitor.found {
             catch_clause.param = None;
