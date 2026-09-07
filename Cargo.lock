@@ -1207,6 +1207,7 @@ name = "swc-plugin-minify-catch-param"
 version = "0.1.0"
 dependencies = [
  "swc_core",
+ "testing",
 ]
 
 [[package]]

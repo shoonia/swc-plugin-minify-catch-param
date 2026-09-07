@@ -1,29 +1,10 @@
-use swc_core::{
-    common::Mark,
-    ecma::{
-        parser::{EsSyntax, Syntax},
-        transforms::{base::resolver, testing::test_transform},
-        visit::visit_mut_pass,
-    },
-};
-use swc_plugin_minify_catch_param::CatchParamMinifier;
+mod setup;
+
+use crate::setup::{syntax, visitor};
+use swc_core::ecma::transforms::testing::test_transform;
 
 pub fn run_test(input: &str, expected: &str) {
-    test_transform(
-        Syntax::Es(EsSyntax {
-            jsx: false,
-            ..Default::default()
-        }),
-        Some(true),
-        |_| {
-            (
-                resolver(Mark::new(), Mark::new(), false),
-                visit_mut_pass(CatchParamMinifier),
-            )
-        },
-        input,
-        expected,
-    );
+    test_transform(syntax(), Some(true), |_| visitor(), input, expected);
 }
 
 #[test]
@@ -188,7 +169,7 @@ fn the_tests() {
         "try {} catch (veryLongErrorParameterNameThatSomeoneDecidedToUse) { console.log(veryLongErrorParameterNameThatSomeoneDecidedToUse); }",
     ), (
         "try {} catch (error1) { console.log(error1); }",
-        "try {} catch (error1) { console.log(error1);}",
+        "try {} catch (error1) { console.log(error1); }",
     )];
 
     for (input, expected) in cases {
