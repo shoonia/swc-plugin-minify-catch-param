@@ -1,0 +1,15 @@
+{
+  "name": "swc-plugin-minify-catch-param",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:wasm": "cargo build --target wasm32-wasip1 --release",
+    "test:rust": "cargo test",
+    "test:smoke": "node tests/smoke/run.mjs",
+    "test": "cargo test && npm run build:wasm && npm run test:smoke"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.15.0"
+  }
+}
