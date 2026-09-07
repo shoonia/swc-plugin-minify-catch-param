@@ -5,7 +5,7 @@ use std::path::PathBuf;
 use swc_core::ecma::transforms::testing::{test_fixture, FixtureTestConfig};
 
 #[testing::fixture("tests/fixture/**/input.js")]
-fn jsx_transformer_fixture(input: PathBuf) {
+fn transformer_fixture(input: PathBuf) {
     let output = input.parent().unwrap().join("output.js");
 
     test_fixture(
