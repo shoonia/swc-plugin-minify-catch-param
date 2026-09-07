@@ -1,8 +1,15 @@
 {
   "name": "swc-plugin-minify-catch-param",
   "version": "0.1.0",
-  "private": true,
+  "description": "A SWC plugin to minify unused catch parameters",
   "type": "module",
+  "main": "target/wasm32-wasip1/release/swc_plugin_minify_catch_param.wasm",
+  "exports": {
+    ".": "./target/wasm32-wasip1/release/swc_plugin_minify_catch_param.wasm"
+  },
+  "files": [
+    "target/wasm32-wasip1/release/swc_plugin_minify_catch_param.wasm"
+  ],
   "scripts": {
     "build:wasm": "cargo build --target wasm32-wasip1 --release",
     "test:rust": "cargo test",
@@ -12,5 +19,19 @@
   },
   "devDependencies": {
     "@swc/core": "^1.15.0"
-  }
+  },
+  "peerDependencies": {
+    "@swc/core": "^1.15.0"
+  },
+  "peerDependenciesMeta": {
+    "@swc/core": {
+      "optional": true
+    }
+  },
+    "author": {
+    "name": "Alexander Zaytsev",
+    "email": "zaytsev126@gmail.com",
+    "url": "https://x.com/_shoonia"
+  },
+  "license": "MIT"
 }
