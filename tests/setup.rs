@@ -7,7 +7,7 @@ use swc_core::{
         visit::{visit_mut_pass, VisitMut},
     },
 };
-use swc_plugin_minify_catch_param::CatchParamMinifier;
+use swc_plugin_minify_catch_param::minifier::CatchParamMinifier;
 
 pub fn syntax() -> Syntax {
     Syntax::Es(EsSyntax {

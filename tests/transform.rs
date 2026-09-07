@@ -59,7 +59,7 @@ fn the_tests() {
         "try {} catch (error) { const message = `Error: ${error}`; console.log(message); }",
     ), (
         "try {} catch (error) { const errors = [...someArray, error]; console.log(errors); }",
-        "try {} catch (error) { const errors = [...someArray, error]; console.log(errors);}",
+        "try {} catch (error) { const errors = [...someArray, error]; console.log(errors); }",
     ), (
         "try {} catch (error) { for (const item of [error]) { console.log(item); } }",
         "try {} catch (error) { for (const item of [error]) { console.log(item); } }",
