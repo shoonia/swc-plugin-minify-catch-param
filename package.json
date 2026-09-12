@@ -11,27 +11,30 @@
     "target/wasm32-wasip1/release/swc_plugin_minify_catch_param.wasm"
   ],
   "scripts": {
-    "build:wasm": "cargo build --target wasm32-wasip1 --release",
+    "build": "cargo build --target wasm32-wasip1 --release",
     "test:rust": "cargo test",
     "test:smoke": "node tests/smoke/run.mjs",
-    "test": "cargo test && npm run build:wasm && npm run test:smoke",
+    "test": "cargo test && npm run build && npm run test:smoke",
     "fixture": "UPDATE=1 cargo test --test fixture"
   },
   "devDependencies": {
-    "@swc/core": "^1.15.0"
+    "@swc/core": "^1.16.2"
   },
   "peerDependencies": {
-    "@swc/core": "^1.15.0"
+    "@swc/core": "^1.16.2"
   },
   "peerDependenciesMeta": {
     "@swc/core": {
       "optional": true
     }
   },
-    "author": {
+  "author": {
     "name": "Alexander Zaytsev",
     "email": "zaytsev126@gmail.com",
     "url": "https://x.com/_shoonia"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "swc-plugin"
+  ]
 }
