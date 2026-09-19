@@ -11,7 +11,7 @@
     "target/wasm32-wasip1/release/swc_plugin_minify_catch_param.wasm"
   ],
   "scripts": {
-    "build": "cargo build --target wasm32-wasip1 --release",
+    "build": "sh build.sh",
     "test:rust": "cargo test",
     "test:smoke": "node tests/smoke/run.mjs",
     "test": "cargo test && npm run build && npm run test:smoke",
@@ -35,6 +35,8 @@
   },
   "license": "MIT",
   "keywords": [
-    "swc-plugin"
+    "swc-plugin",
+    "minify",
+    "optimization"
   ]
 }

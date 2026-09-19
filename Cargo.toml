@@ -17,14 +17,14 @@ strip = true
 panic = "abort"
 
 [dependencies]
-swc_core = { version = "^77.1.*", features = [
+swc_core = { version = "^80.0.0", features = [
   "ecma_ast",
   "ecma_plugin_transform",
 ] }
 
 [dev-dependencies]
 testing = "27.0.0"
-swc_core = { version = "^77.1.*", features = [
+swc_core = { version = "^80.0.0", features = [
   "ecma_parser",
   "testing_transform",
 ] }
