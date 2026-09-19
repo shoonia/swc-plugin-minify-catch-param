@@ -1,6 +1,6 @@
 {
   "name": "swc-plugin-minify-catch-param",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A SWC plugin to minify unused catch parameters",
   "type": "module",
   "main": "target/wasm32-wasip1/release/swc_plugin_minify_catch_param.wasm",
