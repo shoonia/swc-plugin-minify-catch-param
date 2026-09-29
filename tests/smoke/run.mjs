@@ -7,7 +7,7 @@ const output = await transform("try {} catch (error) { }", {
       syntax: "ecmascript"
     },
     experimental: {
-      plugins: [[resolve("target/wasm32-wasip1/release/swc_plugin_minify_catch_param.wasm"), {}]]
+      plugins: [[resolve("index.wasm"), {}]]
     }
   }
 });

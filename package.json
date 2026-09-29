@@ -3,19 +3,20 @@
   "version": "0.1.1",
   "description": "A SWC plugin to minify unused catch parameters",
   "type": "module",
-  "main": "target/wasm32-wasip1/release/swc_plugin_minify_catch_param.wasm",
+  "main": "index.wasm",
   "exports": {
-    ".": "./target/wasm32-wasip1/release/swc_plugin_minify_catch_param.wasm"
+    ".": "./index.wasm"
   },
   "files": [
-    "target/wasm32-wasip1/release/swc_plugin_minify_catch_param.wasm"
+    "index.wasm"
   ],
   "scripts": {
     "build": "sh build.sh",
     "test:rust": "cargo test",
     "test:smoke": "node tests/smoke/run.mjs",
     "test": "cargo test && npm run build && npm run test:smoke",
-    "fixture": "UPDATE=1 cargo test --test fixture"
+    "fixture": "UPDATE=1 cargo test --test fixture",
+    "lint": "cargo clippy --all-targets --all-features -- -D warnings"
   },
   "devDependencies": {
     "@swc/core": "^1.16.2"
